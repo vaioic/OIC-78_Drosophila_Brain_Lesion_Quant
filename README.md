@@ -1,2 +1,4 @@
 # OIC-78_Drosophila_Brain_Lesion_Quant
-Repo contains the analysis pipeline used to measure shape and size of lesions
+Analysis project to quantify lesions present in *Drosophila* brains.
+
+Script to quantify the manually annotated data [here](/Analysis_Scripts/Lesion_Quantification.ipynb)
