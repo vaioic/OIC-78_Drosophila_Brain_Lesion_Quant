@@ -2,6 +2,8 @@
 
 GitHub Repository: https://github.com/vaioic/OIC-78_Drosophila_Brain_Lesion_Quant
 
+The repository also contains all scripts related to creating training data and training a StarDist model.
+
 ### Summary of Request
 
 Detect and quantify the number, size, and shape of lesions in whole *Drosophila* brain samples. 
