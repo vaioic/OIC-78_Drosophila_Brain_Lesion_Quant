@@ -27,7 +27,7 @@ To calculate the Sphericity of the lesion annotations, the following equation wa
 
 [Pandas](https://pandas.pydata.org/docs/index.html), a python package for handling data frames, was used to export the final data frame of measurements as a csv. 
 
-A [Python script](/Analysis_Scripts/Lesion_Quantification.ipynb) was written to quantify all images in an automated manner.
+A Python script was written to quantify all images in an automated manner.
 
 ### Output
 For each image, the label ID, area (Volume), surface area, and sphericity were exported as a csv. Example of data exported shown below:
