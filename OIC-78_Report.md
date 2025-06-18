@@ -19,13 +19,15 @@ Phalloidin stained *Drosophila* brains were imaged with the multi-photon module 
 
 Because the images were manually annotated, the primary task was to measure the label image (lesion annotations). 
 
-[Scikit-image](https://scikit-image.org), a python package for analyzing and quantifying images, was used for measuring the volume and surface area of the lesion annotations. 
+[Scikit-image](https://scikit-image.org), a python package for analyzing and quantifying images, was used for measuring the volume and surface area of the lesion annotations. The label values (Object IDs) and volume were acquired with the `skimage.measure.regionprops_table` module. Surface area was calculated with `skimage.measure.marching_cubes` and `skimage.measure.mesh_surface_area`.
 
 To calculate the Sphericity of the lesion annotations, the following equation was used:
 
 ($\pi$<sup>1/3</sup> * ( (6*Volume)<sup>2/3</sup>) ) / Surface Area
+ 
+The numerator is the surface area of a perfect sphere with the same volume as the object, the denominator is the surface area of the object. The more "wrinkled" the surface of the object, the larger the surface area leading to a smaller ratio value. Sphericity = 1 is a perfect sphere, closer to 0 means less perfect.
 
-[Pandas](https://pandas.pydata.org/docs/index.html), a python package for handling data frames, was used to export the final data frame of measurements as a csv. 
+[Pandas](https://pandas.pydata.org/docs/index.html), a python package for handling data frames, was used to compile and export the final data frame of measurements as a csv. 
 
 A Python script was written to quantify all images in an automated manner.
 
@@ -44,9 +46,9 @@ Unnamed: 0 is the index value of each object (can be ignored). Label is the Obje
 
 ### Notes
 
-With a larger manually annotated data set available, it may be worth using it to train a StarDist model. However, this would only be worth the investment if collecting and analyzing this type of data is part of future experiments in the lab.
+With a larger manually annotated data set available, we may be able to train a StarDist model. However, this would only be worth the investment if collecting and analyzing this type of data is part of longer term future experiments in the lab.
 
 #### Optional Analyses - what other information could you get from this data
-Distribution of the lesions within the brain could be assessed using the centroid coordinates and the bounding box of the whole brain.
+Distribution of the lesions within the brain could be assessed using the centroid coordinates of the lesions and the bounding box of the whole brain.
 
 Fluorescence intensity within the lesions could be measured to assess how "depleted" they are of phalloidin.
